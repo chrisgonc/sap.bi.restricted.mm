@@ -1,0 +1,8 @@
+{
+    "role": {
+        "name": "sap.bi.mla.restricted.privilege::mm.qv",
+			"object_privileges":[  
+			{"name":"sap.bi.mla.restricted.mm.qv::star_transactions_reduced","type":"VIEW","privileges":[ "SELECT" ]}
+			]
+    }
+}

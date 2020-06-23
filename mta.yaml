@@ -1,0 +1,35 @@
+ID: sap.bi.restricted.mm
+_schema-version: '2.1'
+description: Showcase HCS - Profile for development - general
+provider: Christiano Hage
+version: 0.0.1
+modules:
+ - name: db
+   type: hdb
+   path: db
+   requires:
+    - name: hdi_db
+      properties:
+        TARGET_CONTAINER: ~{hdi-container-name}
+    - name: cross-container-service-1
+      group: SERVICE_REPLACEMENTS
+      properties:
+        key: ServiceName_1
+        service: ~{the-service-name}
+resources:
+ - name: hdi_db
+   parameters:
+     config:
+       database_id: 396b321f-5f1f-4aa7-a56c-5d315e7d77aa
+       schema: restricted_mm
+       makeUniquename: false
+     service-name: sap.bi.restricted.mm
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container
+ - name: cross-container-service-1
+   parameters:
+      service-name: sap.bi.confidential
+   properties:
+      the-service-name: ${service-name}
+   type: org.cloudfoundry.existing-service

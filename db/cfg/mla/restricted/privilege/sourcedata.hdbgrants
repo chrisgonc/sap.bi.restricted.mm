@@ -1,0 +1,14 @@
+{
+    "ServiceName_1": {
+        "object_owner": {
+            "container_roles": [
+                "sap.bi.mla.confidential.privilege::analytics_g.all#"
+            ]
+        },
+        "application_user": {
+            "container_roles": [
+                "sap.bi.mla.confidential.privilege::analytics.all"
+            ]
+        }
+    }
+}

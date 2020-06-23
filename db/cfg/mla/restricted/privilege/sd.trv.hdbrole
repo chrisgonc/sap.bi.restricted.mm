@@ -1,0 +1,8 @@
+{
+    "role": {
+        "name": "sap.bi.mla.restricted.privilege::sd.trv",
+			"object_privileges":[  
+			{"name":"sap.bi.mla.restricted.sd.trv::merchant","type":"VIEW","privileges":[ "SELECT"]}
+			]
+    }
+}

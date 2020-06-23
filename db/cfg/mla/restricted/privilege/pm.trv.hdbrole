@@ -1,0 +1,9 @@
+{
+    "role": {
+        "name": "sap.bi.mla.restricted.privilege::pm.trv",
+			"object_privileges":[  
+			{"name":"sap.bi.mla.restricted.pm.trv::customer","type":"VIEW","privileges":[ "SELECT" ]},
+			{"name":"sap.bi.mla.restricted.pm.trv::customer_anonymized","type":"VIEW","privileges":[ "SELECT" ]}
+			]
+    }
+}
