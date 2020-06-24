@@ -1,6 +1,6 @@
 ID: sap.bi.restricted.mm
 _schema-version: '2.1'
-description: Showcase HCS - Profile for development - general
+description: Showcase HCS - Profile for development in the restricted area (ring 1)
 provider: Christiano Hage
 version: 0.0.1
 modules:
@@ -20,7 +20,7 @@ resources:
  - name: hdi_db
    parameters:
      config:
-       database_id: 20a6cb64-7788-4e7b-a00c-553b5a927f14
+       database_id: e5134708-f60d-4943-9b69-14ef8cb16ee5
        schema: restricted_mm
        makeUniquename: false
      service-name: sap.bi.restricted.mm
