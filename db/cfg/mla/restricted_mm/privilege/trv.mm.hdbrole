@@ -1,0 +1,11 @@
+{
+    "role": {
+        "name": "sap.bi.mla.restricted_mm.privilege::trv.mm",
+			"object_privileges":[  
+			{"name":"sap.bi.mla.restricted_mm.trv.mm::card","type":"VIEW","privileges":[ "SELECT" ]},
+			{"name":"sap.bi.mla.restricted_mm.trv.mm::card_transactions","type":"VIEW","privileges":[ "SELECT" ]},
+			{"name":"sap.bi.mla.restricted_mm.trv.mm::card_transactions_cold","type":"VIEW","privileges":[ "SELECT" ]},
+			{"name":"sap.bi.mla.restricted_mm.trv.mm::card_transactions_hotwarm","type":"VIEW","privileges":[ "SELECT" ]}
+			]
+    }
+}

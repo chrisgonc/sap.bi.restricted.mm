@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="sap.bi.mla.restricted.mm.trv::card_transactions" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="sap.bi.mla.restricted_mm.trv.mm::card_transactions" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
 <descriptions defaultDescription="Card Transactions"/>
 <localVariables>
   <variable id="IP_CT_DATE" parameter="true">
@@ -14,12 +14,12 @@
 </localVariables>
 <variableMappings/>
 <dataSources>
-  <DataSource id="sap.bi.mla.restricted.mm.sv::VW_CARD_TRANSACTIONS">
-    <resourceUri>sap.bi.mla.restricted.mm.sv::VW_CARD_TRANSACTIONS</resourceUri>
+  <DataSource id="sap.bi.mla.restricted_mm.sv.mm::VW_CARD_TRANSACTIONS">
+    <resourceUri>sap.bi.mla.restricted_mm.sv.mm::VW_CARD_TRANSACTIONS</resourceUri>
   </DataSource>
 </dataSources>
 <calculationViews/>
-<logicalModel id="sap.bi.mla.restricted.mm.sv::VW_CARD_TRANSACTIONS" filterExpressionLanguage="SQL">
+<logicalModel id="sap.bi.mla.restricted_mm.sv.mm::VW_CARD_TRANSACTIONS" filterExpressionLanguage="SQL">
   <attributes>
     <attribute id="CT_ID" key="true" order="1" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Transaction ID"/>

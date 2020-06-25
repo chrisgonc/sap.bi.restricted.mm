@@ -1,0 +1,8 @@
+{
+  "sap.bi.mla.restricted_mm.sv.sd::VW_MERCHANT": {
+    "target": {
+      "object": "sap.bi.mla.rawdata.sv.sd::VW_MERCHANT",
+      "schema": "CONFIDENTIAL_1"
+    }
+  }
+}

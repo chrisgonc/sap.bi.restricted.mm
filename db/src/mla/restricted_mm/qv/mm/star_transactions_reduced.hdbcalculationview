@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="3.0" dataCategory="CUBE" cacheInvalidationPeriod="NONE" id="sap.bi.mla.restricted_mm.qv.mm::star_transactions_reduced" applyPrivilegeType="NONE" outputViewType="Aggregation" enforceSqlExecution="false">
+<descriptions defaultDescription="Transactions (reduced)"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="sap.bi.mla.restricted_mm.srv.mm::star_transactions">
+    <resourceUri>sap.bi.mla.restricted_mm.srv.mm::star_transactions</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews/>
+<logicalModel id="sap.bi.mla.restricted_mm.srv.mm::star_transactions">
+  <attributes>
+    <attribute attributeHierarchyActive="false" displayAttribute="false" id="CT_DATE" key="true" order="1">
+      <descriptions defaultDescription="Transaction date"/>
+      <keyMapping columnObjectName="star_transactions" columnName="CT_DATE"/>
+    </attribute>
+    <attribute attributeHierarchyActive="false" displayAttribute="false" id="CARD_NUM" order="2">
+      <descriptions defaultDescription="Card number"/>
+      <keyMapping columnObjectName="star_transactions" columnName="CARD_NUM"/>
+    </attribute>
+    <attribute attributeHierarchyActive="false" displayAttribute="false" id="CUST_CPF" order="3">
+      <descriptions defaultDescription="Customer CPF is similar to the Social Security Number in US, but for Brazilian citizens and legally permanent foreigners"/>
+      <keyMapping columnObjectName="star_transactions" columnName="CUST_CPF"/>
+    </attribute>
+    <attribute attributeHierarchyActive="false" displayAttribute="false" id="CUST_NAME" order="4">
+      <descriptions defaultDescription="Customer name"/>
+      <keyMapping columnObjectName="star_transactions" columnName="CUST_NAME"/>
+    </attribute>
+    <attribute attributeHierarchyActive="false" displayAttribute="false" id="CARD_FLAG" order="6">
+      <descriptions defaultDescription="Card flag - 1-Visa, 2-Mastercard, 3-ELO"/>
+      <keyMapping columnObjectName="star_transactions" columnName="CARD_FLAG"/>
+    </attribute>
+    <attribute attributeHierarchyActive="false" displayAttribute="false" id="CARD_CATEGORY" order="7">
+      <descriptions defaultDescription="Card category - 1-Black, 2-Platinum, 3-Gold, 4-Standard"/>
+      <keyMapping columnObjectName="star_transactions" columnName="CARD_CATEGORY"/>
+    </attribute>
+    <attribute attributeHierarchyActive="false" displayAttribute="false" id="CUST_SEGMENT" order="8">
+      <descriptions defaultDescription="Customer segment - 1-Silver , 2-Gold , 3-Platinum"/>
+      <keyMapping columnObjectName="star_transactions" columnName="CUST_SEGMENT"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure aggregationType="sum" id="CT_AMOUNT" order="5" measureType="simple">
+      <descriptions defaultDescription="Transaction amount"/>
+      <measureMapping columnName="CT_AMOUNT" columnObjectName="star_transactions"/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

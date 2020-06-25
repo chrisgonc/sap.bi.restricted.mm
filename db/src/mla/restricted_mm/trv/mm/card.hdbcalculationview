@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="sap.bi.mla.restricted.mm.trv::card" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="sap.bi.mla.restricted_mm.trv.mm::card" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
 <descriptions defaultDescription="Card"/>
 <localVariables/>
 <variableMappings/>
 <dataSources>
-  <DataSource id="sap.bi.mla.restricted.mm.sv::VW_CARD">
-    <resourceUri>sap.bi.mla.restricted.mm.sv::VW_CARD</resourceUri>
+  <DataSource id="sap.bi.mla.restricted_mm.sv.mm::VW_CARD">
+    <resourceUri>sap.bi.mla.restricted_mm.sv.mm::VW_CARD</resourceUri>
   </DataSource>
 </dataSources>
 <calculationViews/>
-<logicalModel id="sap.bi.mla.restricted.mm.sv::VW_CARD">
+<logicalModel id="sap.bi.mla.restricted_mm.sv.mm::VW_CARD">
   <attributes>
     <attribute id="CARD_ID" key="true" order="1" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Card ID"/>

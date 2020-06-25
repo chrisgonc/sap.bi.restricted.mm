@@ -1,0 +1,8 @@
+{
+    "role": {
+        "name": "sap.bi.mla.restricted_mm.privilege::mm.all",
+        	"schema_roles":[
+        	{"names": ["sap.bi.mla.restricted_mm.privilege::trv.mm", "sap.bi.mla.restricted_mm.privilege::srv.mm", "sap.bi.mla.restricted_mm.privilege::qv.mm"]}
+			]
+    }
+}

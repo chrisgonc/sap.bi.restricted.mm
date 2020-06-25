@@ -1,6 +1,6 @@
 {
     "role": {
-        "name": "sap.bi.mla.restricted.privilege::analytics.all",
+        "name": "sap.bi.mla.restricted_mm.privilege::analytics.all",
 			"schema_privileges":[
 			{
 	    		"privileges": ["SELECT"]

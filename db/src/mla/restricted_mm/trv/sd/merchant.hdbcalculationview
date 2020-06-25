@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="sap.bi.mla.restricted.sd.trv::merchant" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="sap.bi.mla.restricted_mm.trv.sd::merchant" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
 <descriptions defaultDescription="Merchant"/>
 <localVariables/>
 <variableMappings/>
 <dataSources>
-  <DataSource id="sap.bi.mla.restricted.sd.sv::VW_MERCHANT">
-    <resourceUri>sap.bi.mla.restricted.sd.sv::VW_MERCHANT</resourceUri>
+  <DataSource id="sap.bi.mla.restricted_mm.sv.sd::VW_MERCHANT">
+    <resourceUri>sap.bi.mla.restricted_mm.sv.sd::VW_MERCHANT</resourceUri>
   </DataSource>
 </dataSources>
 <calculationViews/>
-<logicalModel id="sap.bi.mla.restricted.sd.sv::VW_MERCHANT">
+<logicalModel id="sap.bi.mla.restricted_mm.sv.sd::VW_MERCHANT">
   <attributes>
     <attribute id="MER_ID" key="true" order="1" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Merchant ID"/>

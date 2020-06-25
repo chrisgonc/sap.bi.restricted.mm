@@ -1,0 +1,14 @@
+{
+  "sap.bi.mla.restricted_mm.sv.pm::VW_CUSTOMER": {
+    "target": {
+      "object": "sap.bi.mla.rawdata.sv.pm::VW_CUSTOMER",
+      "schema": "CONFIDENTIAL_1"
+    }
+  },
+  "sap.bi.mla.restricted_mm.sv.pm::VW_CUSTOMER_ANONYMIZED": {
+    "target": {
+      "object": "sap.bi.mla.rawdata.sv.pm::VW_CUSTOMER_ANONYMIZED",
+      "schema": "CONFIDENTIAL_1"
+    }
+  }
+}

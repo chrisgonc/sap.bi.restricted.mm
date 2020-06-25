@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" xmlns:Variable="http://www.sap.com/ndb/BiModelVariable.ecore" schemaVersion="3.0" dataCategory="CUBE" analyticViewCompatibilityMode="true" cacheInvalidationPeriod="NONE" id="sap.bi.mla.restricted_mm.srv.mm::star_transactions" applyPrivilegeType="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="Star Transactions"/>
+<localVariables>
+  <variable parameter="true" id="IP_CT_DATE">
+    <descriptions defaultDescription=" "/>
+    <variableProperties datatype="DATE">
+      <valueDomain type="Date"/>
+      <selection/>
+      <defaultRange lowValue="2019-1-1"/>
+    </variableProperties>
+  </variable>
+</localVariables>
+<variableMappings/>
+<dataSources>
+  <DataSource id="sap.bi.mla.restricted_mm.trv.mm::card_transactions">
+    <resourceUri>sap.bi.mla.restricted_mm.trv.mm::card_transactions</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="CT_ID"/>
+      <viewAttribute id="CT_DATE"/>
+      <viewAttribute id="CT_CARD_ID"/>
+      <viewAttribute id="CT_CUST_ID"/>
+      <viewAttribute id="CT_MER_ID"/>
+      <viewAttribute id="CT_AMOUNT"/>
+      <viewAttribute id="CT_FEE"/>
+      <viewAttribute id="CT_FLAG_FRAUD"/>
+      <viewAttribute id="CT_STATUS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="sap.bi.mla.restricted_mm.trv.mm::card_transactions"/>
+    <filter>&quot;CT_DATE&quot;&gt;='$$IP_CT_DATE$$'</filter>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute attributeHierarchyActive="false" displayAttribute="false" id="CT_ID" order="1">
+      <descriptions defaultDescription="Transaction ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CT_ID"/>
+    </attribute>
+    <attribute attributeHierarchyActive="false" displayAttribute="false" id="CT_DATE" order="2">
+      <descriptions defaultDescription="Transaction date"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CT_DATE"/>
+    </attribute>
+    <attribute attributeHierarchyActive="false" displayAttribute="false" id="CT_FLAG_FRAUD" order="5">
+      <descriptions defaultDescription="Transaction is fraud? 0-No, 1-Yes"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CT_FLAG_FRAUD"/>
+    </attribute>
+    <attribute attributeHierarchyActive="false" displayAttribute="false" id="CT_STATUS" order="6">
+      <descriptions defaultDescription="Transaction status - 0-Inactive, 1-Active"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CT_STATUS"/>
+    </attribute>
+    <attribute id="CT_CARD_ID$local">
+      <descriptions defaultDescription="Card ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CT_CARD_ID"/>
+    </attribute>
+    <attribute id="CT_MER_ID$local">
+      <descriptions defaultDescription="Merchant ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CT_MER_ID"/>
+    </attribute>
+    <attribute id="CT_CUST_ID$local">
+      <descriptions defaultDescription="Customer ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CT_CUST_ID"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure aggregationType="sum" id="CT_AMOUNT" order="3" measureType="simple">
+      <descriptions defaultDescription="Transaction amount"/>
+      <measureMapping columnName="CT_AMOUNT" columnObjectName="Projection_1"/>
+    </measure>
+    <measure aggregationType="sum" id="CT_FEE" order="4" measureType="simple">
+      <descriptions defaultDescription="Transaction fee"/>
+      <measureMapping columnName="CT_FEE" columnObjectName="Projection_1"/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+  <sharedDimensions>
+    <logicalJoin associatedObjectUri="sap.bi.mla.restricted_mm.trv.mm::card">
+      <attributes>
+        <attributeRef>CT_CARD_ID$local</attributeRef>
+      </attributes>
+      <associatedAttributeNames>
+        <attributeName>CARD_ID</attributeName>
+      </associatedAttributeNames>
+      <properties cardinality="CN_N" joinType="referential" joinOperator="Equal"/>
+      <associatedAttributeFeatures/>
+    </logicalJoin>
+    <logicalJoin associatedObjectUri="sap.bi.mla.restricted_mm.trv.sd::merchant">
+      <attributes>
+        <attributeRef>CT_MER_ID$local</attributeRef>
+      </attributes>
+      <associatedAttributeNames>
+        <attributeName>MER_ID</attributeName>
+      </associatedAttributeNames>
+      <properties cardinality="CN_N" joinType="referential" joinOperator="Equal"/>
+      <associatedAttributeFeatures/>
+    </logicalJoin>
+    <logicalJoin associatedObjectUri="sap.bi.mla.restricted_mm.trv.pm::customer">
+      <attributes>
+        <attributeRef>CT_CUST_ID$local</attributeRef>
+      </attributes>
+      <associatedAttributeNames>
+        <attributeName>CUST_ID</attributeName>
+      </associatedAttributeNames>
+      <properties cardinality="CN_N" joinType="leftOuter" joinOperator="Equal"/>
+      <associatedAttributeFeatures/>
+    </logicalJoin>
+  </sharedDimensions>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="100" y="213"/>
+      <rectangleSize width="160" height="30"/>
+    </shape>
+    <shape modelObjectName="Projection_1" modelObjectNameSpace="StarJoinViewNodeInput" modelObjectType="repository">
+      <upperLeftCorner x="830" y="294"/>
+      <rectangleSize width="179"/>
+    </shape>
+    <shape modelObjectName="sap.bi.mla.restricted_mm.trv.mm::card" modelObjectNameSpace="StarJoinViewNodeSharedCV" modelObjectType="repository">
+      <upperLeftCorner x="620" y="30"/>
+      <rectangleSize width="210"/>
+    </shape>
+    <shape modelObjectName="sap.bi.mla.restricted_mm.trv.sd::merchant" modelObjectNameSpace="StarJoinViewNodeSharedCV" modelObjectType="repository">
+      <upperLeftCorner x="1220" y="30"/>
+      <rectangleSize width="241"/>
+    </shape>
+    <shape modelObjectName="sap.bi.mla.restricted_mm.trv.pm::customer" modelObjectNameSpace="StarJoinViewNodeSharedCV" modelObjectType="repository">
+      <upperLeftCorner x="1520" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>
