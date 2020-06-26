@@ -36,7 +36,7 @@
       <keyMapping columnObjectName="VW_CARD_TRANSACTIONS_COLD" columnName="CT_FLAG_FRAUD"/>
     </attribute>
     <attribute id="CT_STATUS" order="9" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CT_STATUS"/>
+      <descriptions defaultDescription="Transaction status - 0-Inactive, 1-Active"/>
       <keyMapping columnObjectName="VW_CARD_TRANSACTIONS_COLD" columnName="CT_STATUS"/>
     </attribute>
   </attributes>
