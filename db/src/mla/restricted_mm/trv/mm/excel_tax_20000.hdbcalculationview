@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="sap.bi.mla.restricted_mm.trv.mm::excel_tax_20000" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="excel_tax_20000"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="sap.bi.mla.restricted_mm.sv.mm::VW_EXCEL_TAX_20000">
+    <resourceUri>sap.bi.mla.restricted_mm.sv.mm::VW_EXCEL_TAX_20000</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews/>
+<logicalModel id="sap.bi.mla.restricted_mm.sv.mm::VW_EXCEL_TAX_20000">
+  <attributes>
+    <attribute id="Transaction_ID" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Transaction ID"/>
+      <keyMapping columnObjectName="VW_EXCEL_TAX_20000" columnName="Transaction ID"/>
+    </attribute>
+    <attribute id="Description" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Tax description"/>
+      <keyMapping columnObjectName="VW_EXCEL_TAX_20000" columnName="Description"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="Tax" order="2" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="Tax amount"/>
+      <measureMapping columnObjectName="VW_EXCEL_TAX_20000" columnName="Tax"/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

@@ -20,7 +20,7 @@ resources:
  - name: hdi_db
    parameters:
      config:
-       database_id: e5134708-f60d-4943-9b69-14ef8cb16ee5
+       database_id: d1c353c3-ea74-4e9a-bda5-897d70fd7376
        schema: restricted_mm
        makeUniquename: false
      service-name: sap.bi.restricted_mm

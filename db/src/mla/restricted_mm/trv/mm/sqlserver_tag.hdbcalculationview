@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="sap.bi.mla.restricted_mm.trv.mm::sqlserver_tag" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="sqlserver_tag"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="sap.bi.mla.restricted_mm.sv.mm::VW_SQLSERVER_TAG">
+    <resourceUri>sap.bi.mla.restricted_mm.sv.mm::VW_SQLSERVER_TAG</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews/>
+<logicalModel id="sap.bi.mla.restricted_mm.sv.mm::VW_SQLSERVER_TAG">
+  <attributes>
+    <attribute id="TagCT_ID" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Transaction ID"/>
+      <keyMapping columnObjectName="VW_SQLSERVER_TAG" columnName="TagCT_ID"/>
+    </attribute>
+    <attribute id="TagText" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TagText"/>
+      <keyMapping columnObjectName="VW_SQLSERVER_TAG" columnName="TagText"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

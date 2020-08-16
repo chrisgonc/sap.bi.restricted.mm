@@ -22,5 +22,17 @@
       "object": "sap.bi.mla.rawdata.sv.mm::VW_CARD_TRANSACTIONS_HOTWARM",
       "schema": "CONFIDENTIAL_1"
     }
+  },
+  "sap.bi.mla.restricted_mm.sv.mm::VW_SQLSERVER_TAG": {
+    "target": {
+      "object": "sap.bi.mla.rawdata.sv.mm::VW_SQLSERVER_TAG",
+      "schema": "CONFIDENTIAL_1"
+    }
+  },
+  "sap.bi.mla.restricted_mm.sv.mm::VW_EXCEL_TAX_20000": {
+    "target": {
+      "object": "sap.bi.mla.rawdata.sv.mm::VW_EXCEL_TAX_20000",
+      "schema": "CONFIDENTIAL_1"
+    }
   }
 }
